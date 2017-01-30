@@ -29,8 +29,8 @@
 
         <?php endif; ?>
 
-      </div>
+      </div><!--end row-->
 
-  </div>
+  </div><!--end container-->
 
 <?php get_footer(); ?>
