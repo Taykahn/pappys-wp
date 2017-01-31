@@ -14,8 +14,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 body {
-	padding-top: 50px;
-	padding-bottom: 20px;
+	min-width:320px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	line-height:1.5;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .admin-bar, .navbar-fixed-top {
@@ -28,7 +32,7 @@ body {
 		position: absolute;
 		background: #222;
 		padding: 10px 15px;
-		width: 200px;		
+		width: 200px;
 	}
 
 	li:hover .sub-menu {
@@ -81,3 +85,49 @@ body {
 .widget h3 {
 	color: #888;
 }
+
+/* Helper classes ------------ */
+@media( min-width: 768px ) {
+	.no-pad {
+		padding: 0;
+	}
+}
+
+/* Header -------------- */
+header .title {
+	text-align: center;
+	margin-top: 10%;
+	height: 130px;
+	border-radius: 4px;
+	background: rgba(102, 28, 15, .8)
+}
+header .h1-title h1 {
+	padding: 30px;
+	font-size: 50px;
+	color: #fff;
+    font-weight: 300;
+    margin-top: 	0%;
+}
+header .blue-button {
+	margin-top: 5%;
+}
+
+/* Button Styles------------- */
+.blue-btn {
+	padding: 15px 35px;
+	font-size: 15px;
+	text-transform: uppercase;
+	color: white;
+	font-weight: 600;
+	background: #99bdf7;
+	transition: .5s;
+	border-radius: 4px;
+}
+.blue-btn:hover {
+	text-decoration: none;
+	color: #99bdf7;
+	border: 1px solid #99bdf7;
+	border-radius: 4px;
+	background: #fff;
+}
+

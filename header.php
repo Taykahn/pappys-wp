@@ -18,6 +18,9 @@
     
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
     <?php wp_head() ?>
 
     <?php 
@@ -59,22 +62,43 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-  
-  <div
 
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron">
+  <?php 
 
-    <div class="container-fluid" style="background: url( '../images/pappys-banner.jpg' ) cover no-repeat;">
-      
-      <div class="container">
-      
-        <h1>Welcome to Pappy's!</h1>
+    $banner_img = CWS_Theme::cws_get_img( 'banner.jpg', 'Pappy\'s Grill &amp; Pub' ); 
+
+  ?>
+
+  <header>
+
+      <div class="container-fluid no-pad">
+
+        <div class="banner no-pad" style="background: url( '<?php echo $banner_img ?>' ) 50%/cover no-repeat; height: 400px;">
         
-      </div><!--.container-->
+          <div class="container"> 
 
-    </div><!--end container-->
+            <div class="title col-sm-12">
 
-  </div><!--end jumbotron-->
+              <div class="h1-title col-sm-8">
+          
+                <h1>Welcome to Pappy's!</h1>
+
+              </div><!--.h1-title-->
+
+              <div class="blue-button col-sm-4">
+
+                <a href="/menu/" class="blue-btn">Our Menu</a>
+
+              </div><!--.blue-button-->
+
+            </div><!--.title-->
+            
+          </div><!--.container-->
+
+        </div><!--.banner-->
+
+      </div><!--end container-->
+
+  </header>
 
   <main id="main" role="main">

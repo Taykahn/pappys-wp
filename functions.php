@@ -3,6 +3,9 @@
  * Functions
  */
 
+//Require included files
+require_once STYLESHEETPATH . '/includes/cws-theme-class.php';
+
 /**
  * Load theme styles and scripts
  *
