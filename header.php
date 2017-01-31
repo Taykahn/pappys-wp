@@ -18,11 +18,21 @@
     
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
-      <?php wp_head(); ?>
+    <?php wp_head() ?>
+
+    <?php 
+      global $post;
+      global $cws_img_path;
+      $post_slug = $post->post_name;
+      $page_slug = 'page-'.$post_slug;
+      $post_id   = 'post-id-'.$post->ID;
+      $fouc      = 'fouc';
+      $classes   = array( $page_slug, $post_id );
+    ?>
 
   </head>
 
-  <body <?php body_class(); ?>>
+  <body <?php body_class( $classes ) ?>>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -49,19 +59,22 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-    
-    
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
+  
+  <div
 
-      <div class="container-fluid" style="background: url( '../images/pappys-banner.jpg' ) 100% no-repeat;">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+
+    <div class="container-fluid" style="background: url( '../images/pappys-banner.jpg' ) cover no-repeat;">
+      
+      <div class="container">
+      
+        <h1>Welcome to Pappy's!</h1>
         
-        <div class="container">
-        
-          <h1>Welcome to Pappy's!</h1>
-          
-        </div><!--.container-->
+      </div><!--.container-->
 
-      </div><!--end container-->
+    </div><!--end container-->
 
-    </div><!--end jumbotron-->
+  </div><!--end jumbotron-->
+
+  <main id="main" role="main">
