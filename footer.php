@@ -4,15 +4,15 @@
 
       <footer>
 
-      	<div class="social-media">
+            <div class="social-media">
 
       		<a href="#">
 
                   <img src="images/facebook-wrap.png" alt="facebook logo" class="social-icon">
 
-        	<p>&copy; <?php bloginfo('name'); ?> <?php echo date('Y'); ?></p>
+        	      <p>&copy; <?php bloginfo('name'); ?> <?php echo date('Y'); ?></p>
 
-        </div>
+            </div>
 
       </footer>
 
