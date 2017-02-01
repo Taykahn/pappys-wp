@@ -99,7 +99,6 @@ header .title {
 	margin-top: 10%;
 	height: 130px;
 	border-radius: 4px;
-	background: rgba(102, 28, 15, .8)
 }
 header .h1-title h1 {
 	padding: 30px;
@@ -130,4 +129,9 @@ header .blue-button {
 	border-radius: 4px;
 	background: #fff;
 }
+
+.social-media {
+	text-align: center;
+}
+
 
