@@ -12,12 +12,6 @@
       <?php bloginfo('name'); ?>
     </title>
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
@@ -65,7 +59,7 @@
 
   <?php 
 
-    $banner_img = CWS_Theme::cws_get_img( 'banner.jpg', 'Pappy\'s Grill &amp; Pub' ); 
+    $banner_img = CWS_Theme::cws_get_img( 'pappys-store.png', 'Pappy\'s Grill &amp; Pub' ); 
 
   ?>
 
@@ -79,15 +73,15 @@
 
             <div class="title col-sm-12">
 
-              <div class="h1-title col-sm-8">
+              <div class="h1-title col-sm-12">
           
-                <h1>Welcome to Pappy's!</h1>
+                <!--<h1>Welcome to Pappy's!</h1>-->
 
               </div><!--.h1-title-->
 
-              <div class="blue-button col-sm-4">
+            <div class="blue-button col-sm-12">
 
-                <a href="/menu/" class="blue-btn">Our Menu</a>
+                <!--<a href="http://localhost:8888/Pappys-wp/menu/" class="blue-btn">Our Menu</a>-->
 
               </div><!--.blue-button-->
 
