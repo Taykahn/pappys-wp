@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <link rel="shortcut icon" href="<?php bloginfo('template_directory');?>/images/favicon.ico">
 
     <title>
@@ -20,7 +19,7 @@
     <?php 
       global $post;
       global $cws_img_path;
-      $post_slug = $post->post_name;
+      $post_slug = isset( $post->post_name ) ? $post->post_name : null;
       $page_slug = 'page-'.$post_slug;
       $post_id   = 'post-id-'.$post->ID;
       $fouc      = 'fouc';
@@ -32,16 +31,31 @@
   <body <?php body_class( $classes ) ?>>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
+
       <div class="container">
+
         <div class="navbar-header">
+
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+
             <span class="sr-only">Toggle navigation</span>
+
             <span class="icon-bar"></span>
+
             <span class="icon-bar"></span>
+
             <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a>
-        </div>
+
+          </button><!-- end button -->
+
+          <div class="phone">
+
+            <a href="tel:816-390-9550">(816) 390-9550</a>
+
+          </div><!-- end phone -->
+
+        </div><!-- end navbar-header -->
+
         <div id="navbar" class="navbar-collapse collapse">
 
           <?php 
@@ -54,12 +68,15 @@
           ?>
 
         </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
+
+      </div><!-- end container -->
+
+    </nav><!-- end navbar -->
 
   <?php 
 
-    $banner_img = CWS_Theme::cws_get_img( 'pappys-store.png', 'Pappy\'s Grill &amp; Pub' ); 
+    $banner_img = CWS_Theme::cws_get_img( 'pappys-floor.jpg', 'Pappy\'s Grill &amp; Pub' ); 
+    $pappys_img = CWS_Theme::cws_get_img( 'pappys-image.png', 'Pappy\'s Grill &amp; Pub' );
 
   ?>
 
@@ -67,32 +84,34 @@
 
       <div class="container-fluid no-pad">
 
-        <div class="banner no-pad" style="background: url( '<?php echo $banner_img ?>' ) 50%/cover no-repeat; height: 400px;">
-        
-          <div class="container"> 
+        <div class="banner no-pad" style="background: url( '<?php echo esc_html( $banner_img ) ?>' ) 50%/cover no-repeat; height: 500px;">
 
-            <div class="title col-sm-12">
+          <div class="wrapper">
 
-              <div class="h1-title col-sm-12">
-          
-                <!--<h1>Welcome to Pappy's!</h1>-->
+            <div class="banner-img">
 
-              </div><!--.h1-title-->
+              <a href="http://localhost:8888/Pappys-wp/"><img src="<?php echo esc_url( $pappys_img ) ?> "></a>
 
-            <div class="blue-button col-sm-12">
+              <div class="hours">
 
-                <!--<a href="http://localhost:8888/Pappys-wp/menu/" class="blue-btn">Our Menu</a>-->
+                <?php $args = new WP_Query( 'page_id=554' ); ?>
 
-              </div><!--.blue-button-->
+                <?php while ($args-> have_posts()) : $args-> the_post();  ?>
 
-            </div><!--.title-->
-            
-          </div><!--.container-->
+                  <?php the_content(); ?>
+
+                <?php endwhile;?>
+
+              </div><!-- end hours -->
+
+            </div><!--end banner-img-->
+
+          </div><!--end wrapper-->
 
         </div><!--.banner-->
 
       </div><!--end container-->
 
-  </header>
+  </header><!-- end header -->
 
   <main id="main" role="main">

@@ -2,9 +2,16 @@
 
 	<?php if ( ! dynamic_sidebar( 'page' )  ): ?>
 
-    <h3>Sidebar Setup</h3>
-    <p>Please add widgets to the page sidebar to have them display here.</p>
+		 <?php if ( is_active_sidebar( 'home_right_1' ) ) : ?>
+
+				<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+
+					<?php dynamic_sidebar( 'home_right_1' ); ?>
+
+				</div><!-- #primary-sidebar -->
+
+			<?php endif; ?>
 
 	<?php endif; ?>
 
-</div>
+</div><!-- end col-md-3 sidebar ->

@@ -1,3 +1,7 @@
+/**
+ * single
+ */
+
 <?php get_header(); ?>
 
   <div class="container">
@@ -16,15 +20,21 @@
 
             </div><!-- end page-header -->
 
-            <?php the_content(); ?>
+            <a href="<?php the_permalink(); ?>"><?php the_content(); ?></a>
 
-          <?php endwhile; ?>
+          <?php endwhile; else: ?>
+
+            <div class="page-header">
+
+              <h1>Oh no!</h1>
+
+            </div><!-- end page-header -->
+
+          <p>No content is appearing for this page!</p>
 
         <?php endif; ?>
 
       </div><!-- end col-md-9 -->
-
-      <?php get_sidebar(); ?>
 
     </div><!-- end row -->
 

@@ -1,31 +1,50 @@
+<?php 
+/**
+* Footer
+*/
+
+$facebook_img = CWS_Theme::cws_get_img( 'facebook-wrap.png'); 
+
+$creditcard_img = CWS_Theme::cws_get_img( 'CreditCardLogos.png');
+
+?>
+
 </main>
 
 <hr>
 
-      <footer>
+  <footer>
 
-            <div class="social-media">
+    <div class="section">
 
-      		<a href="#">
+      <div class="social-icon">
 
-                  <img src="images/facebook-wrap.png" alt="facebook logo" class="social-icon">
+        <a href="https://www.facebook.com/Pappys-Grill-Pub-245352765500666/"><img src="<?php echo esc_url( $facebook_img ) ?>" alt="facebook logo" class="social-icon"></a>
 
-        	      <p>&copy; <?php bloginfo('name'); ?> <?php echo date('Y'); ?></p>
+      </div><!-- end social-icon -->
 
-            </div>
+      <div class="cards">
 
-      </footer>
+        <img src="<?php echo esc_url( $creditcard_img ) ?>" alt="creditcards">
 
-    </div> <!-- /container -->
+        <p>Sorry, no checks</p>
 
+      </div><!-- end cards -->
 
+      <div class="copyright">
+
+        <p>&copy; <?php bloginfo('name'); ?> <?php echo date('Y'); ?></p>
+
+      </div><!-- end copyright -->
+
+    </div><!-- end section -->
+
+  </footer>
 
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <?php wp_footer(); ?>
 
   </body>
-  
+
 </html>

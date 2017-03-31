@@ -1,54 +1,149 @@
 <?php
 /**
- * Front page
+ * Front Page
  */
+
 get_header() ?>
 
-<div class="container">
-    
-  <!-- Example row of columns -->
-  <div class="column">
+<?php 
 
-    <div class="inner-content col-sm-12">
+  $args = array( 
+    'post_type'      => 'featured_items', 
+    'orderby'        => 'rand', 
+    'posts_per_page' =>'2' 
+  );
 
-    </div><!--.inner-content-->
+  $featured_items = new WP_Query( $args );
+  
+  $args = array(
+    'post_type'     =>'specials', 
+    'orderby'       =>'rand', 
+    'posts_per_page'=>'2'
+    );
 
-    <div class="col-md-4">
+  $specials=new WP_Query( $args ); 
 
-      <h2>Menu Items</h2>
-        
-        <img src="/images/salad-small.jpg">
-        
-        <p>Pappy's has added a variety of sensational salads to choose from...</p>
-        
-        <button type="button" class="btn btn-default">Our Menu</button>
+  $args = array( 
+    'post_type'     => 'full_bar', 
+    'orderby'       => 'rand', 
+    'posts_per_page'=>'2' );
 
-    </div>
+  $full_bar = new WP_Query( $args );
 
-    <div class="col-md-4">
+?>
 
-      <h2>Contact</h2>
-        
-        <img src="/images/map.png">
-        
-        <p>Every item on our huge menu is available for carry out.  Just call ahead at <a href="tel:8163909550">(816) 390-9550</a> and place your order.  We accept most major credit cards.</p>
-      
-        <button type="button" class="btn btn-default">Our Info</button>
+<section class="three-column row no-max pad" style="margin-left: 10px;">
 
-    </div>
+  <div class="col-md-12">
 
-    <div class="col-md-4">
+    <div class="row">
 
-      <h2>Full Bar</h2>
-        
-        <img src="/images/bar2-small.jpg">
-        
-        <p>Pappy's has a full bar and a wide variety of bottled and draft beer.  We offer Miller Lite, Bud Light, American Ale and Blue Moon on tap.</p>
-      
-        <h3>Happy Hour every day from 5 - 8pm!</h3>
+        <!-- Primary -->
 
-    </div>
+        <div class="primary">
 
-  </div><!--end container-->
+          <div class="col-md-4">
 
-<?php get_footer(); ?>
+            <h2>Featured Items</h2>
+
+              <hr>
+
+                <?php if ( $featured_items->have_posts() ) : ?>
+
+                  <?php while ( $featured_items->have_posts() ) : $featured_items->the_post(); ?>
+
+                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+
+                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+
+                    <p><?php the_content(); ?></p>
+
+                    <?php the_meta(); ?>
+
+                  <?php endwhile; ?>
+
+                <?php endif ?>
+
+              <?php wp_reset_postdata() ?>
+
+            <?php get_post(); ?>
+
+          </div><!-- col-md-4 -->
+
+        </div><!-- end primary -->
+
+        <!-- Secondary -->
+
+        <div class="secondary">
+
+          <div class="col-md-4">
+
+            <h2>The Specials</h2>
+
+              <hr>
+
+                <?php if ( $specials->have_posts() ) : ?>
+
+                  <?php while ( $specials->have_posts() ) : $specials->the_post(); ?>
+
+                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+
+                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+
+                    <?php the_content(); ?>
+
+                    <?php the_meta() ?>
+
+                  <?php endwhile; ?>
+
+                <?php endif; ?>
+
+              <?php wp_reset_postdata() ?>
+
+            <?php get_post(); ?>
+
+          </div><!-- col-md-4 -->
+
+        </div><!-- end secondary -->
+
+        <!-- Tertiary -->
+
+        <div class="tertiary">
+
+          <div class="col-md-4">
+
+            <h2>The Bar</h2>
+
+              <hr>
+
+                <?php if ( $full_bar->have_posts() ) : ?>
+
+                  <?php while ( $full_bar->have_posts() ) : $full_bar->the_post(); ?>
+
+                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></h3></a>
+
+                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+
+                    <p><?php the_content(); ?></p>
+
+                    <?php the_meta(); ?>
+
+                  <?php endwhile; ?>
+
+                <?php endif ?>
+
+              <?php wp_reset_postdata() ?>
+
+            <?php get_post(); ?>
+
+          </div><!-- end col-md-4 -->
+
+        </div><!-- end tertiary -->
+
+    </div><!-- end row -->
+
+  </div><!-- end col-md-12 -->
+
+</section><!-- end three-column row no-max pad -->
+
+<?php get_footer() ?>
