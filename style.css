@@ -15,7 +15,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 body {
 	min-width:320px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Lato', sans-serif;
 	font-size: 16px;
 	line-height:1.5;
 	-webkit-font-smoothing: antialiased;
@@ -23,7 +23,7 @@ body {
 }
 
 .admin-bar, .navbar-fixed-top {
-	margin-top: 30px;
+	margin-top: px;
 }
 
 @media (min-width:768px) {
@@ -54,11 +54,11 @@ body {
 }
 
 .sub-menu a:hover  {
-	color: #fff;
+	color: black;
 }	
 
 .current-menu-item > a, .current-menu-parent > a {
-	background: #000;
+	background: #fff;
 }
 
 .current-menu-parent li a {
@@ -70,14 +70,25 @@ body {
 	font-weight: bold;
 }
 
+.navbar-inverse {
+	background-color: white;
+	border-color: white;
+}
+.navbar-toggle {
+	background-color: #e5e5e5;
+	border-color: #e5e5e5;
+}
 /* Helper classes ------------ */
 
 @media( min-width: 768px ) {
 	.no-pad {
 		padding: 0;
 	}
-	.wrapper3 .row .col-md-6 p {
+	.primary-2 .col-md-6 p {
 		text-align: center;
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
 	} 
 		.col-sm-6, #srm_gmp_embed_1 {
 	width: 900px;
@@ -87,7 +98,7 @@ body {
 @media( min-width: 320px ) {
 	.phone {
 		margin-left: 15px;
-	}
+	} 
 	.row .pdf-menu .col-md-12 img {
 		display: block;
 		margin: 0 auto;
@@ -116,17 +127,26 @@ header .h1-title h1 {
 	margin-top: 0%;
 }
 
+.navbar-inverse .navbar-nav li a {
+	color: #797474;
+}
+
+#menu-contact li a:hover {
+	color: black;
+}
 .phone a {
 	float: left;
 	padding-top: 13px;
 	margin-right: 10px;
 	color: #337ab7;
 }
-
 .wrapper {
-	padding-top: 90px;
+	padding-top: 80px;
 }
-
+.banner {
+	width: 90%;
+	margin: 0 auto;
+}
 .banner-img img {
 	display: block;
 	margin: 0 auto;
@@ -136,13 +156,26 @@ header .h1-title h1 {
     height: auto;
 }
 
-.hours p {
+.hours p, .hours a {
 	color: white;
 	font-size: 25px;
 }
 
 
 /* Content ------------------*/
+
+#srm_gmp_embed_1, 
+.primary .col-md-4 img, 
+.secondary .col-md-4 img, 
+.tertiary .col-md-4 img, 
+.primary-2 .col-md-6 img {
+	box-shadow: 5px 8px 10px #888;
+}
+
+.col-md-4 h2 {
+
+	color: #797474;
+}
 
 .content a {
 	color: inherit;
@@ -159,8 +192,20 @@ header .h1-title h1 {
 	padding-top: 15px;
 }
 
-.primary, .secondary, .tertiary, h2, h3, a {
+.primary, 
+.secondary, 
+.tertiary, 
+h3, 
+a {
 	color: black;
+}
+
+.secondary .col-md-4 p {
+	padding-top: 10px;
+}
+
+.secondary-2 .col-md-6 {
+	padding-top: 5px;
 }
 
 ul {
@@ -179,6 +224,20 @@ ul {
 	clear: both;
 }
 
+.row h1 {
+	text-align: center;
+	color: #797474;
+}
+
+.primary-2 .col-md-6 p img {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	display: block;
+	padding-bottom: 10px;
+}
+ßß
 .wrapper3 .row .col-md-6 img {
 	display: block;
 	margin: 0 auto;
@@ -190,7 +249,23 @@ ul {
 
 /* Footer -------------------*/
 
-.section, .social-icon, .cards, .cards p, .copyright p {
+footer {
+	background-color: #e5e5e5;
+}
+
+.section {
+	padding-top: 10px;
+}
+
+.social-icon, .cards img {
+	padding-bottom: 5px;
+}
+
+.section, 
+.social-icon, 
+.cards, 
+.cards p, 
+.copyright p {
 	text-align: center;
 }
 

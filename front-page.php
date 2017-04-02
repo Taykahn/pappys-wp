@@ -10,7 +10,7 @@ get_header() ?>
   $args = array( 
     'post_type'      => 'featured_items', 
     'orderby'        => 'rand', 
-    'posts_per_page' =>'2' 
+    'posts_per_page' =>'1' 
   );
 
   $featured_items = new WP_Query( $args );
@@ -18,7 +18,7 @@ get_header() ?>
   $args = array(
     'post_type'     =>'specials', 
     'orderby'       =>'rand', 
-    'posts_per_page'=>'2'
+    'posts_per_page'=>'1'
     );
 
   $specials=new WP_Query( $args ); 
@@ -26,27 +26,33 @@ get_header() ?>
   $args = array( 
     'post_type'     => 'full_bar', 
     'orderby'       => 'rand', 
-    'posts_per_page'=>'2' );
+    'posts_per_page'=>'1' );
 
   $full_bar = new WP_Query( $args );
 
+  $contact = new WP_Query( 'page_id=25' );
+
+  $map = new WP_Query( 'page_id=769' );
+
 ?>
 
-<section class="three-column row no-max pad" style="margin-left: 10px;">
+<section class="three-column row no-max pad" style="margin-left: 10px; margin-right: 10px;">
 
   <div class="col-md-12">
 
     <div class="row">
+
+<br>
+
+      <h1>Featured Items  &amp  Specials</h1>
+
+<br>
 
         <!-- Primary -->
 
         <div class="primary">
 
           <div class="col-md-4">
-
-            <h2>Featured Items</h2>
-
-              <hr>
 
                 <?php if ( $featured_items->have_posts() ) : ?>
 
@@ -78,10 +84,6 @@ get_header() ?>
 
           <div class="col-md-4">
 
-            <h2>The Specials</h2>
-
-              <hr>
-
                 <?php if ( $specials->have_posts() ) : ?>
 
                   <?php while ( $specials->have_posts() ) : $specials->the_post(); ?>
@@ -111,10 +113,6 @@ get_header() ?>
         <div class="tertiary">
 
           <div class="col-md-4">
-
-            <h2>The Bar</h2>
-
-              <hr>
 
                 <?php if ( $full_bar->have_posts() ) : ?>
 
@@ -146,4 +144,61 @@ get_header() ?>
 
 </section><!-- end three-column row no-max pad -->
 
+<section class="two-column row no-max pad" style="margin-left: 10px; margin-right: 10px;">
+
+  <div class="col-md-12">
+
+    <div class="row">
+
+<br>
+
+    <h1>Location</h1>
+
+<br>
+
+    <!-- Primary 2 -->
+
+      <div class="primary-2">
+
+      <div class="col-md-6">
+
+        <?php while ($contact-> have_posts()) : $contact-> the_post();  ?>
+
+          <?php the_content(); ?>
+
+        <?php endwhile;?>
+
+      </div><!-- end col-md-6 --> 
+
+      </div><!-- end primary 2 -->
+
+      <!-- Secondary 2 -->
+
+      <div class="secondary-2">
+
+      <div class="col-md-6">
+
+        <?php while ($map-> have_posts()) : $map-> the_post();  ?>
+
+          <?php the_content(); ?>
+
+        <?php endwhile;?>
+
+      </div><!-- end col-md-6 --> 
+
+      </div><!-- end secondary 2 -->
+
+    </div><!-- end row -->
+
+  </div><!-- end col-md-12 -->
+
+</section><!-- end two-column row no-max pad -->
+
 <?php get_footer() ?>
+
+
+
+
+
+
+

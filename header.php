@@ -12,7 +12,7 @@
     </title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
 
     <?php wp_head() ?>
 
@@ -75,7 +75,7 @@
 
   <?php 
 
-    $banner_img = CWS_Theme::cws_get_img( 'pappys-floor.jpg', 'Pappy\'s Grill &amp; Pub' ); 
+    $banner_img = CWS_Theme::cws_get_img( 'pappys-floor.png', 'Pappy\'s Grill &amp; Pub' ); 
     $pappys_img = CWS_Theme::cws_get_img( 'pappys-image.png', 'Pappy\'s Grill &amp; Pub' );
 
   ?>

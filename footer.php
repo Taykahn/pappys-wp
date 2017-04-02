@@ -11,7 +11,7 @@ $creditcard_img = CWS_Theme::cws_get_img( 'CreditCardLogos.png');
 
 </main>
 
-<hr>
+<br>
 
   <footer>
 
